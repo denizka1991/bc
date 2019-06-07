@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="{{ url_for('index') }}" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Creditor</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name" name = "lender" value="{{
+    request.form.get('lender', '')}}">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Summ</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Summ" name = "summ" value="{{
+    request.form.get('summ', '')}}">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Sender</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Sender" name = "sender" value="{{
+    request.form.get('sender', '')}}">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}
